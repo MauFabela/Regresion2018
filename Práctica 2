@@ -1,0 +1,29 @@
+#EJERCICO(TAREA)
+#Se declaran los vectores
+x<-c(.40,.42,.48,.51,.57,.6,.7,.75,.75,.78,.84,.95,.99,1.03,1.12,1.15,1.20,1.25,1.25,1.28,1.30,1.34,1.37,1.40,1.43,1.46,1.49,1.55,1.58,1.60)
+x
+y<-c(1.02,1.21,.88,.98,1.52,1.83,1.50,1.80,1.74,1.63,2.00,2.80,2.48,2.47,3.05,3.18,3.76,3.68,3.82,3.21,4.27,3.12,3.99,3.75,4.10,4.18,3.77,4.34,4.21,4.92)
+y
+v<-data.frame(x,y)
+v
+View(x)
+
+#Se realiza la grafica de dispersion, (pch sirve para indicar la forma de los puntos)
+#(col se utiliza para cambiar el color de los puntos) 
+#( main para poner el titulo de la gráfica)
+plot(x,y,main="Diagrama de dispersión",pch=19, col=19)
+
+# Realizando la grafica se observa que el tipo de relacion es lineal
+# se calcula la correlacion, la cual es de 0.9681245 indica que es positiva, alta
+cor(x,y)
+
+# Se identifica el "outliers" y se marca con otro color en la gráfica.
+points(1.60,4.92, pch=20)
+points(1.60,4.92, col=10)
+
+# Se elimina el "outliers"
+v1<-v[-30,]
+v1
+
+#Se grafica nuevamente
+plot(v1,main="Diagrama de dispersión", pch=19, col=19)
